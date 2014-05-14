@@ -63,8 +63,6 @@
       type: 'POST',
       data: loginData,
       success: (function(response) {
-        console.log('look HERE stupid');
-        console.log(response);
         $('#login').prev().val('');
         $('#username').attr('data-userid', response.user._id);
         $('#username').text(response.user.username);
@@ -75,12 +73,20 @@
     event.preventDefault();
   }
   function trade(event) {
-    var tradeAmount = $(this).closest('form').serialize();
+    var tradeAmount = $(this).closest('form').serialize().split('=');
+    var userID = $(this).closest('div').prev().prev().data('userid');
+    var tradeAndUser = {
+      tradeAmount: tradeAmount[1],
+      userID: userID
+    };
     $.ajax({
       url: '/trade',
       type: 'PUT',
-      data: tradeAmount,
-      success: (function(response) {})
+      data: tradeAndUser,
+      success: (function(response) {
+        $('#trade').prev().val('');
+        $('#userStats').text(("wood: " + response.wood + " cash: " + response.cash));
+      })
     });
     event.preventDefault();
   }

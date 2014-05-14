@@ -1,17 +1,17 @@
 extends ../shared/template
 
 block content
-  h1 Builder
+  h1 
 
-  form
+  form#loginForm
     input(type='text', name='username', autofocus=true, placeholder='Username')
     button#login Login
-  #username
-  #userStats
+  #username Plese Log In
+  #userStats The Trading Post
   #tradingPost
-
-  button#seed plant seed
-  button#showForest Show Forest
+  #buttonBox
+    button#seed plant seed
+    button#showForest Show Forest
   #forest
 
 block scripts

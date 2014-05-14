@@ -1,41 +1,100 @@
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+@import url(http://fonts.googleapis.com/css?family=Waiting+for+the+Sunrise);
+@import url(http://fonts.googleapis.com/css?family=Patrick+Hand);
+
 html{
-  background-image: url('/img/bg.jpg');
+  background-image: url('/img/bg.png');
   height: 100%;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+#loginForm{
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+h1{
+  height: 60px;
+  width: 300px;
+  margin: 5px auto;
+  background-image: url('/img/builder.png');
+  background-repeat: no-repeat;
+}
+.height{
+  height: 20px;
+  width: 30px;
+  border: 1px dashed black;
+  text-align: center;
+}
+.tree{
+  padding: 10px;
+}
+.tree>button{
+  margin-left: 15%;
+
 }
 .chopped{
-  background-image: url('/img/stump.png') !important;
+  background-image: url('/img/stump3.png') !important;
+}
+#buttonBox{
+  width: 212px;
+  margin: 10px auto;
+}
+#userStats, #username, #tradingPost{
+  margin: 0 auto;
+}
+#tradingPost{
+  width: 275px;
 }
 #userStats, #username{
-  width: 200px;
-  background-color: rgba(229, 248, 147, 0.71);
+  text-align: center;
+  height: 30px;
+  width: 400px;
+  background-color: rgba(115, 203, 191, 0.5);
 }
-#forest{
-  background-color: rgba(255, 253, 253, 0.47);
+#username{
+  font-family: 'Patrick Hand', cursive;
+  font-size: 28px;
+  border-top: 3px solid black;
+  border-bottom: 1px solid black;
+  border-right: 3px solid black;
+  border-left: 3px solid black;
+  border-radius: 20px 20px 0 0;
 }
+#userStats{
+  font-family: 'Waiting for the Sunrise', cursive;
+  font-size: 20px;
+  border-top: 1px solid black;
+  border-bottom: 3px solid black;
+  border-right: 3px solid black;
+  border-left: 3px solid black;
+  border-radius: 0 0 20px 20px;
+}
+
 .seed{
-  background-image: url('/img/seed.png');
+  background-image: url('/img/seed3.png');
 }
 
 .tree{
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   background-size: cover;
   display: inline-block;
   margin: 10px;
   border: 2px solid black;
+  border-radius: 20px;
 }
 .sapling{
   background-image: url('/img/sapling.png');
 }
 .teenager{
-  background-image: url('/img/teenager.png');
+  background-image: url('/img/teenager3.png');
 }
 .adult{
-  background-image: url('/img/adult.png');
+  background-image: url('/img/adult3.png');
 }
 .dead{
-  background-image: url('/img/dead.png');
+  background-image: url('/img/dead3.png');
 }

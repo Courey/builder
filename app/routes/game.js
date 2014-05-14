@@ -11,8 +11,16 @@ exports.index = (req, res)=>{
 };
 
 exports.trade = (req, res)=>{
-
-  console.log(req.body.wood);
+  var wood = req.body.tradeAmount;
+  var cash = wood/5;
+  var userID = Mongo.ObjectID(req.body.userID);
+  users.findOne({_id: userID},(error, userData)=>{
+    userData.cash += cash;
+    userData.wood -= wood;
+    users.save(userData, (error, count)=>{
+      res.send(userData);
+    });
+  });
 };
 
 exports.grow = (req, res)=>{
