@@ -15,9 +15,19 @@ module.exports = (req, res, next)=>{
 
 function load(app, fn){
   var home = traceur.require(__dirname + '/../routes/home.js');
+  var game = traceur.require(__dirname + '/../routes/game.js');
 
   app.get('/', dbg, home.index);
   app.get('/help', dbg, home.help);
+
+  app.get('/game', dbg, game.index);
+  app.post('/login', dbg, game.login);
+  app.post('/seed', dbg, game.seed);
+  app.get('/forest/:userid', dbg, game.forest);
+  app.put('/tree/:treeID/grow', dbg, game.grow);
+  app.put('/tree/:treeID/chop', dbg, game.chop);
+  app.put('/trade', dbg, game.trade);
+
   console.log('Routes Loaded');
   fn();
 }
